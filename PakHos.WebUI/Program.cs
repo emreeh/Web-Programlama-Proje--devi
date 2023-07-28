@@ -1,3 +1,7 @@
+using PakHos.Data;
+using PakHos.Services.Abstract;
+using PakHos.Services.Concrete;
+
 namespace PakHos.WebUI
 {
     public class Program
@@ -6,8 +10,10 @@ namespace PakHos.WebUI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Add services to the container. ///servisi oluþturduk
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DatabaseContext>();
+            builder.Services.AddTransient(typeof(IService<>), typeof(Service<>));
 
             var app = builder.Build();
 
@@ -25,6 +31,10 @@ namespace PakHos.WebUI
             app.UseRouting();
 
             app.UseAuthorization();
+           app.MapControllerRoute(
+            name: "admin",
+            pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}"
+          );
 
             app.MapControllerRoute(
                 name: "default",
