@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PakHos.Data.Abstract
 {
-    internal interface IRepository<T> where T:class //<T> TÜM CLASSLAR ÇALIŞABİLMESİ İÇİN GENERİC YAPIYORUZ
+ public interface IRepository<T> where T:class //<T> TÜM CLASSLAR ÇALIŞABİLMESİ İÇİN GENERİC YAPIYORUZ
     {
         
         List<T> GetAll();
