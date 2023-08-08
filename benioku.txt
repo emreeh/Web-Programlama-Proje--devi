@@ -1,1 +1,3 @@
-odev yuklenmeye baslanmistir.
+Ödevde hastane randevu sistemi yapılmıştır.
+Ana bilim dalı, poliklinik, doktor tanımlama ve doktor çalışma saatleri oluştulmuştur.
+Kayıtlı kullanıcı sistem üzerinden uygun klinik ve doktor seçebilecektir.
